@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/hw2_giveup.dir/main.cpp.o CMakeFiles/hw2_giveup.dir/utils.cpp.o CMakeFiles/hw2_giveup.dir/response.cpp.o CMakeFiles/hw2_giveup.dir/request.cpp.o CMakeFiles/hw2_giveup.dir/proxyexceptions.cpp.o CMakeFiles/hw2_giveup.dir/logger.cpp.o CMakeFiles/hw2_giveup.dir/cacheitem.cpp.o CMakeFiles/hw2_giveup.dir/cache.cpp.o  -o hw2_giveup -lpthread 

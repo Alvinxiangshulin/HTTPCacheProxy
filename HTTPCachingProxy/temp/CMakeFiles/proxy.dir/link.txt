@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/proxy.dir/main.cpp.o CMakeFiles/proxy.dir/utils.cpp.o CMakeFiles/proxy.dir/response.cpp.o CMakeFiles/proxy.dir/request.cpp.o CMakeFiles/proxy.dir/proxyexceptions.cpp.o CMakeFiles/proxy.dir/logger.cpp.o CMakeFiles/proxy.dir/cacheitem.cpp.o CMakeFiles/proxy.dir/cache.cpp.o  -o proxy -lpthread 

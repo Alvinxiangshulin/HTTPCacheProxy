@@ -1,0 +1,3 @@
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cmake-build-debug/CMakeFiles/hw2_giveup.dir
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cmake-build-debug/CMakeFiles/edit_cache.dir

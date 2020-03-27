@@ -1,0 +1,3 @@
+/home/sx61/erss-hwk2-sx61-xl310/HTTPCachingProxy/temp/CMakeFiles/rebuild_cache.dir
+/home/sx61/erss-hwk2-sx61-xl310/HTTPCachingProxy/temp/CMakeFiles/proxy.dir
+/home/sx61/erss-hwk2-sx61-xl310/HTTPCachingProxy/temp/CMakeFiles/edit_cache.dir

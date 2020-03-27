@@ -1,0 +1,18 @@
+Danger-log
+1. The body of the response maybe very large, and the way we receive message may cause error by memset function in some machines.
+2. To confirm we receive the message byte by byte, the receive time could be very long and excess a time limit(if there is a protocol to limits the receive time)
+3. Since we create thread whenever there is a new request, the time of process could be more than thread pool.
+4. Our cache design is a FIFO cache, so the effectivity may be worse than the LRU cache. 
+5. Some of the functions (ofstream write, mutex_lock, etc.) have no specific error handler, so they do not throw any exception.  
+6. The Cache-Control method may have "private" and "public" method, but we do not take into consideration. 
+7. We have some specific error handler and an exception class that prints out the error and exit.
+8. The browser has its own plug-in or automatically connect with some websites.
+9. The ETag tag can be "ETag" and "Etag"
+10. The header of the request may be "HTTP/1.0"
+11. Recv function may return -1. We just exit the function without exception or sending message to browser.
+12. Cache is not in database, so it is not secure and may crush down. 
+13. URLErrorException is strong gurantee.
+14. ConnectionErrorException is basic gurantee.
+15. CacheErrorException is basic gurantee.
+16. CorruptRequestException is basic gurantee.
+17. MyException class can be strong gurantee and basic gurantee.

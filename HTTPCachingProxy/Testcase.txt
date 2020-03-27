@@ -1,0 +1,13 @@
+CONNECT:
+www.google.com
+www.baidu.com
+www.youtube.com
+GET:
+content-length
+http://pfister.ee.duke.edu/index.html
+http://people.duke.edu/~bmr23/ece568/class.html
+chunked:
+http://www.httpwatch.com/httpgallery/chunked/chunkedimage.aspx
+www.mocky.io
+POST:
+http://httpbin.org/forms/post

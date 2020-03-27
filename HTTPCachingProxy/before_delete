@@ -1,0 +1,146 @@
+#include <iostream>
+#include <ctype.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <stdlib.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <cstring>
+#include <netdb.h>
+#include <vector>
+#include "HTTPresponse.h"
+#include "utils.h"
+#include "response.h"
+
+int main() {
+    struct sockaddr_in serv_addr;
+    int lfd, cfd;
+    char buf[BUFSIZ];
+    memset(buf, '0', sizeof(buf));
+
+    lfd = socket(AF_INET, SOCK_STREAM, 0);
+    int yes = 1;
+    setsockopt(lfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
+
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_port = htons(12345);
+    serv_addr.sin_addr.s_addr = INADDR_ANY;
+
+    int b = bind(lfd, (struct sockaddr *) &serv_addr, sizeof(serv_addr));
+//    printf("%d\n", b);
+
+    listen(lfd, 128);
+
+    while (1){
+        struct sockaddr_in clie_addr;
+        socklen_t clie_addr_len;
+        cfd = accept(lfd, (struct sockaddr *) &clie_addr, &clie_addr_len);
+        yes = 1;
+        setsockopt(cfd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int));
+        clie_addr_len = sizeof(clie_addr);
+//    printf("%d\n", cfd);
+        char clie_ip[INET_ADDRSTRLEN];
+        inet_ntop(AF_INET, &clie_addr.sin_addr.s_addr, clie_ip, INET_ADDRSTRLEN);
+
+        printf("client ip: %s, client port: %d\n", clie_ip, ntohs(clie_addr.sin_port));
+
+        int n = read(cfd, buf, sizeof(buf));
+
+
+
+        int fd;
+        int status;
+        struct addrinfo hints;
+        struct addrinfo *addrlist, *rm_it;
+
+        memset(&hints, 0, sizeof(hints));
+        hints.ai_family = AF_UNSPEC;
+        hints.ai_socktype = SOCK_STREAM;
+        hints.ai_flags = AI_PASSIVE;
+
+        status = getaddrinfo("pfister.ee.duke.edu", "80", &hints, &addrlist);
+        for (rm_it = addrlist; rm_it != NULL; rm_it = rm_it->ai_next) {
+            fd = socket(rm_it->ai_family, rm_it->ai_socktype, rm_it->ai_protocol);
+            // cout << rm_it->ai_addr << endl;
+            if (fd == -1) {
+                continue;
+            }
+
+            int yes = 1;
+            if (setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &yes, sizeof(int)) == -1) {
+                perror("setsockopt:");
+                return -1;
+            }
+
+            if (connect(fd, rm_it->ai_addr, rm_it->ai_addrlen) != -1) {
+                // close(fd);
+                // perror("client: connect");
+                break;
+            }
+            // bind failed
+            close(fd);
+        }
+
+        //const char * request = "GET http://pfister.ee.duke.edu/images/wintergarden.jpg HTTP/1.1\r\nHost: pfister.ee.duke.edu\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nDNT: 1\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\n\r\n";
+        const char * request = "GET http://pfister.ee.duke.edu/index.html HTTP/1.1\r\nHost: pfister.ee.duke.edu\r\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:73.0) Gecko/20100101 Firefox/73.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: gzip, deflate\r\nDNT: 1\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\n\r\n";
+        send_message(request, strlen(request), fd);
+
+        Response response(fd);
+        response.sendClient(cfd);
+//        char buffer[1];
+//        std::vector<char> response;
+//        size_t line_break_count = 0;
+//        while (1) {
+//            // print_vec(response);
+//            recv(fd, buffer, 1,
+//                 MSG_WAITALL); // while loop to receive everything
+//            response.push_back(buffer[0]);
+//            if (buffer[0] == '\n') {
+//                // cout << "newline" << endl;
+//                // print_vec(response);
+//                std::string str(response.end() - 4, response.end());
+//                // cout << "\"" << str << "\"" << endl;
+//                // break;
+//                if (str == "\r\n\r\n") {
+//                    if (line_break_count == 0) {
+//                        break;
+//                    }
+//                    line_break_count++;
+//                }
+//            }
+//        }
+//
+//        std::string resp_str(response.begin(), response.end());
+//
+//        HTTPresponse response_object;
+//        response_object.response_buffer = response;
+//        response_object.build_fv_map();
+//        // cout << resp_str << endl;
+//        // cout << "CACHE CONTROL" << response_object.get_field_value("CACHE-CONTROL")
+//        //     << endl;
+//        // print_vec(response_object.response_buffer); // remove
+//
+//        int content_len = response_object.get_content_length();
+//        if (content_len >= 0) {
+//            // cout << "len = " << content_len << endl;
+//
+//            std::vector<char> msg_body2(content_len);
+//
+//            int recv_err = recv(fd, msg_body2.data(), content_len, MSG_WAITALL);
+//            if (recv_err == -1) {
+//                std::cerr << "recv failed" << std::endl;
+//                perror("recv");
+//            }
+//            response_object.response_buffer.insert(
+//                    response_object.response_buffer.end(), msg_body2.begin(),
+//                    msg_body2.end());
+//        }
+//        char * buff = response_object.response_buffer.data();
+//        int num_to_send = response_object.response_buffer.size();
+//        send_message(buff, num_to_send, cfd);
+//        printf("DEBUG receive data %s\n", buff);
+    }
+    return 0;
+}

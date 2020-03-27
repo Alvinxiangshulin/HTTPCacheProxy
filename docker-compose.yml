@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: ./HTTPCachingProxy/Dockerfile
+    user: root
+    command: "/var/log/erss/HTTPCachingProxy/proxy" 
+    volumes:
+      - .:/var/log/erss
+    ports:
+      - "12345:12345"

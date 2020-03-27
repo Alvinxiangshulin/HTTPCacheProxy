@@ -1,0 +1,180 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cache.cpp
+cache.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cache.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cache.h
+map
+-
+queue
+-
+iomanip
+-
+cacheitem.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cacheitem.h
+request.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.h
+logger.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/logger.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cacheitem.cpp
+cacheitem.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cacheitem.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cacheitem.h
+ctime
+-
+response.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/response.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/logger.cpp
+logger.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/logger.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/logger.h
+iostream
+-
+fstream
+-
+request.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/main.cpp
+iostream
+-
+unistd.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+netinet/in.h
+-
+cstring
+-
+netdb.h
+-
+vector
+-
+mutex
+-
+thread
+-
+signal.h
+-
+utils.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/utils.h
+response.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/response.h
+request.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.h
+logger.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/logger.h
+proxyexceptions.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.h
+cache.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/cache.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.cpp
+proxyexceptions.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.h
+exception
+-
+string
+-
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.cpp
+request.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.h
+proxyexceptions.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.h
+vector
+-
+unistd.h
+-
+cstdio
+-
+sys/socket.h
+-
+string
+-
+map
+-
+sstream
+-
+cstring
+-
+iostream
+-
+mutex
+-
+utils.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/utils.h
+proxyexceptions.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/response.cpp
+response.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/response.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/response.h
+vector
+-
+unistd.h
+-
+cstdio
+-
+sys/socket.h
+-
+string
+-
+map
+-
+sstream
+-
+cstring
+-
+iostream
+-
+utils.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/utils.h
+request.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/request.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/utils.cpp
+stdlib.h
+-
+stdio.h
+-
+sys/socket.h
+-
+cstring
+-
+unistd.h
+-
+string
+-
+vector
+-
+netinet/in.h
+-
+arpa/inet.h
+-
+utils.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/utils.h
+proxyexceptions.h
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/proxyexceptions.h
+
+/media/xianghui/expand/ece568/hw2_newest/ece568_hw2 (copy)/ece568_hw2/utils.h
+

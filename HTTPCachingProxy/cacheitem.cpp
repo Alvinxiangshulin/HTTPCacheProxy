@@ -1,6 +1,4 @@
-//
-// Created by xianghui on 2/28/20.
-//
+
 
 #include "cacheitem.h"
 

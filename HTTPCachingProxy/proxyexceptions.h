@@ -1,6 +1,4 @@
-//
-// Created by xianghui on 2/27/20.
-//
+
 
 #ifndef HW2_GIVEUP_PROXYEXCEPTIONS_H
 #define HW2_GIVEUP_PROXYEXCEPTIONS_H

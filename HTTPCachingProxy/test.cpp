@@ -1,6 +1,4 @@
-//
-// Created by xianghui on 2/23/20.
-//
+
 #include <sys/socket.h>
 #include <cstdio>
 #include <netinet/in.h>

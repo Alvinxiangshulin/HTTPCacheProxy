@@ -1,6 +1,4 @@
-//
-// Created by xianghui on 2/23/20.
-//
+
 
 #ifndef INC_568_HW2_GIVEUP_UTILS_H
 #define INC_568_HW2_GIVEUP_UTILS_H

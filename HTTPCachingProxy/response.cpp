@@ -6,9 +6,6 @@
 //  Copyright © 2020 Shulin Xiang. All rights reserved.
 //
 
-//
-// Created by xianghui on 2/23/20.
-//
 
 #include "response.h"
 
